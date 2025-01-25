@@ -19,7 +19,6 @@ namespace MegaDesk_Grow
             InitializeComponent();
             deskQuote = quote;
         }
-
         private void DisplayQuote_Load(object sender, EventArgs e)
         {
             lblCustomerName.Text = deskQuote.CustomerName;
@@ -48,7 +47,6 @@ namespace MegaDesk_Grow
         {
 
         }
-
         private void lblDeskMaterial_Click(object sender, EventArgs e)
         {
 
