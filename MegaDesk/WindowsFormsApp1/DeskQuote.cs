@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MegaDesk_Grow;
+using Newtonsoft.Json;
+using System.IO;
 namespace MegaDesk_Grow
 {
     public class DeskQuote
@@ -14,6 +16,7 @@ namespace MegaDesk_Grow
         public DateTime QuoteDate { get; set; }
         public decimal QuoteTotal { get; set; }
 
+        public static readonly string QuotesFile = "quotes.json";
         public DeskQuote(Desk desk, string customerName, int rushDays, DateTime quoteDate)
         {
             Desk = desk;
@@ -38,6 +41,44 @@ namespace MegaDesk_Grow
 
             QuoteTotal *= rushFactor;
         }
+
+        public static void AddQuote(DeskQuote newQuote)
+        {
+            try
+            {
+                List<DeskQuote> quotes = LoadQuotesFromFile(); 
+                quotes.Add(newQuote);  
+
+                string json = JsonConvert.SerializeObject(quotes, Formatting.Indented);
+                File.WriteAllText(QuotesFile, json); 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving quotes to file: {ex.Message}");
+                throw; 
+            }
+        }
+        private static List<DeskQuote> LoadQuotesFromFile()
+        {
+            try
+            {
+                if (File.Exists(QuotesFile))
+                {
+                    string json = File.ReadAllText(QuotesFile);  
+                    return JsonConvert.DeserializeObject<List<DeskQuote>>(json) ?? new List<DeskQuote>();
+                }
+                else
+                {
+                    return new List<DeskQuote>(); 
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading quotes from file: {ex.Message}");
+                return new List<DeskQuote>(); 
+            }
+        }
+
 
         public void DisplayQuoteDetails()
         {

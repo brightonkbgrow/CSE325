@@ -40,9 +40,9 @@
             // dgvQuotes
             // 
             this.dgvQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuotes.Location = new System.Drawing.Point(221, 9);
+            this.dgvQuotes.Location = new System.Drawing.Point(202, 9);
             this.dgvQuotes.Name = "dgvQuotes";
-            this.dgvQuotes.Size = new System.Drawing.Size(567, 429);
+            this.dgvQuotes.Size = new System.Drawing.Size(586, 429);
             this.dgvQuotes.TabIndex = 0;
             this.dgvQuotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgQuotes_CellContentClick);
             // 
@@ -50,7 +50,7 @@
             // 
             this.txtSearchCustomerName.Location = new System.Drawing.Point(53, 6);
             this.txtSearchCustomerName.Name = "txtSearchCustomerName";
-            this.txtSearchCustomerName.Size = new System.Drawing.Size(162, 20);
+            this.txtSearchCustomerName.Size = new System.Drawing.Size(143, 20);
             this.txtSearchCustomerName.TabIndex = 1;
             // 
             // lblSearchCustomerName
@@ -67,7 +67,7 @@
             this.cbMaterialFilter.FormattingEnabled = true;
             this.cbMaterialFilter.Location = new System.Drawing.Point(15, 32);
             this.cbMaterialFilter.Name = "cbMaterialFilter";
-            this.cbMaterialFilter.Size = new System.Drawing.Size(200, 21);
+            this.cbMaterialFilter.Size = new System.Drawing.Size(181, 21);
             this.cbMaterialFilter.TabIndex = 5;
             // 
             // btnSearch
@@ -75,7 +75,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(15, 59);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(93, 46);
+            this.btnSearch.Size = new System.Drawing.Size(86, 46);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -84,9 +84,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(122, 59);
+            this.btnBack.Location = new System.Drawing.Point(107, 59);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(93, 46);
+            this.btnBack.Size = new System.Drawing.Size(89, 46);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;

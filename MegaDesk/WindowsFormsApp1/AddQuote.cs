@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Grow
 {
@@ -333,7 +336,12 @@ namespace MegaDesk_Grow
                     else if (rushOrder == 7) rushOrderPrice = 40;
                 }
 
-                totalPrice += rushOrderPrice;  
+                totalPrice += rushOrderPrice;
+
+                Desk desk = new Desk(width, depth, numDrawers, (DesktopMaterial)Enum.Parse(typeof(DesktopMaterial), selectedMaterial.ToString()));
+                DeskQuote newQuote = new DeskQuote(desk, txtName.Text, rushOrder, DateTime.Now);
+                DeskQuote.AddQuote(newQuote);
+                newQuote.DisplayQuoteDetails();
 
                 MessageBox.Show($"Name: {txtName.Text}\nWidth: {width}\"\nDepth: {depth}\"\nDrawers: {numDrawers}\nMaterial: {selectedMaterial}\nRush Order: {rushOrder}\nTotal Price: ${totalPrice}", "Quote Summary", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

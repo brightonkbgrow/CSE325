@@ -7,22 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace MegaDesk_Grow
 {
     public partial class ViewAllQuotes : Form
     {
         private List<DeskQuote> allQuotes;
+        private const string QuotesFile = "quotes.json";
         public ViewAllQuotes(List<DeskQuote> quotes)
         {
             InitializeComponent();
-
-            allQuotes = quotes ?? new List<DeskQuote>();
-
-            LoadQuotes();
+            allQuotes = LoadQuotesFromFile();
+            DisplayQuotes();
         }
 
-        private void LoadQuotes()
+        private List<DeskQuote> LoadQuotesFromFile()
+        {
+            if (File.Exists(QuotesFile))
+            {
+                try
+                {
+                    string json = File.ReadAllText(QuotesFile);
+                    Console.WriteLine(json);
+                    return JsonConvert.DeserializeObject<List<DeskQuote>>(json) ?? new List<DeskQuote>();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading quotes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return new List<DeskQuote>();
+        }
+
+        private void DisplayQuotes()
         {
             if (allQuotes == null || allQuotes.Count == 0)
             {

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MegaDesk_Grow;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace MegaDesk_Grow
 {
@@ -19,10 +21,31 @@ namespace MegaDesk_Grow
         {
             InitializeComponent();
 
-            allQuotes = quotes ?? new List<DeskQuote>();
+            allQuotes = LoadQuotesFromFile();
 
             cbMaterialFilter.DataSource = Enum.GetValues(typeof(DesktopMaterial));
             cbMaterialFilter.SelectedIndex = -1; 
+        }
+
+        private List<DeskQuote> LoadQuotesFromFile()
+        {
+            try
+            {
+                if (File.Exists(DeskQuote.QuotesFile))
+                {
+                    string json = File.ReadAllText(DeskQuote.QuotesFile); 
+                    return JsonConvert.DeserializeObject<List<DeskQuote>>(json) ?? new List<DeskQuote>();
+                }
+                else
+                {
+                    return new List<DeskQuote>();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading quotes from file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new List<DeskQuote>();
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

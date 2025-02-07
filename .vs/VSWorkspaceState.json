@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MegaDesk"
+    "\\MegaDesk",
+    "\\MegaDesk\\WindowsFormsApp1"
   ],
-  "SelectedNode": "\\MegaDesk\\WindowsFormsApp1.sln",
+  "SelectedNode": "\\MegaDesk",
   "PreviewInSolutionExplorer": false
 }
