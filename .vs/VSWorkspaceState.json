@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MegaDesk",
-    "\\MegaDesk\\WindowsFormsApp1"
+    "\\MegaDesk\\WindowsFormsApp1",
+    "\\RazorPagesMovie",
+    "\\RazorPagesMovie\\RazorPagesMovie",
+    "\\RazorPagesMovie\\RazorPagesMovie\\Pages",
+    "\\RazorPagesMovie\\RazorPagesMovie\\Pages\\Shared"
   ],
-  "SelectedNode": "\\MegaDesk\\WindowsFormsApp1\\Desk.cs",
+  "SelectedNode": "\\RazorPagesMovie\\RazorPagesMovie\\Pages\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

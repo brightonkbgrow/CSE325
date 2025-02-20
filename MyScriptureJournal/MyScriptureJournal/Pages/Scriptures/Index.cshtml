@@ -1,0 +1,71 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.IndexModel
+
+
+
+@{
+    ViewData["Book"] = "Index";
+}
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form>
+    <section>
+        <label>Book: <input type="text" asp-for="BookSearch" /></label>
+        <label>Notes: <input type="text" asp-for="SearchString" /></label>
+        <input type="submit" value="Filter" />
+    </section>
+</form>
+
+<section>
+    <a href="?SortOrder=book&SearchString=@Model.SearchString&BookSearch=@Model.BookSearch">Sort by Book</a> |
+    <a href="?SortOrder=date&SearchString=@Model.SearchString&BookSearch=@Model.BookSearch">Sort by Date Added</a>
+</section>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Verse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Scripture) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
