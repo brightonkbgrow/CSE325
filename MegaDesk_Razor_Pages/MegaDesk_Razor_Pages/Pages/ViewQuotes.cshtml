@@ -1,0 +1,40 @@
+﻿@page
+@model MegaDesk_Razor_Pages.Pages.ViewQuotesModel
+
+<h2>View Quotes</h2>
+<a asp-page="/Index" class="btn btn-secondary">Back</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Width</th>
+            <th>Depth</th>
+            <th>Material</th>
+            <th>Num of Drawers</th>
+            <th>Rush Order Days</th>
+            <th>Quote Date</th>
+            <th>Quote Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quote in Model.Quotes)
+        {
+            <tr>
+                <td>@quote.CustomerName</td>
+                <td>@quote.DeskWidth</td>
+                <td>@quote.DeskDepth</td>
+                <td>@quote.DeskMaterial</td>
+                <td>@quote.NumDrawers</td>
+                <td>@quote.RushOrderDays</td>
+                <td>@quote.QuoteDate.ToString("MM/dd/yyyy")</td> 
+                <td>@quote.QuoteTotal.ToString("C")</td>
+                <td>
+                    <a asp-page="./EditQuote" asp-route-id="@quote.Id">Edit</a> |
+                    <a asp-page="./DeleteQuote" asp-route-id="@quote.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

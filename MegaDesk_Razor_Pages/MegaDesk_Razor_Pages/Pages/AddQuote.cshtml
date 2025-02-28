@@ -1,0 +1,62 @@
+﻿@page
+@model MegaDesk_Razor_Pages.Pages.AddQuoteModel
+
+<h1>Add New Quote</h1>
+
+<form method="post">
+    <div class="form-group row">
+        <label for="CustomerName" class="col-sm-2 col-form-label">Customer Name</label>
+        <div class="col-sm-10">
+            <input type="text" id="CustomerName" name="CustomerName" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DeskWidth" class="col-sm-2 col-form-label">Desk Width</label>
+        <div class="col-sm-10">
+            <input type="number" id="DeskWidth" name="DeskWidth" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DeskDepth" class="col-sm-2 col-form-label">Desk Depth</label>
+        <div class="col-sm-10">
+            <input type="number" id="DeskDepth" name="DeskDepth" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DeskMaterial" class="col-sm-2 col-form-label">Desk Material</label>
+        <div class="col-sm-10">
+            <select id="DeskMaterial" name="DeskMaterial" class="form-control">
+                <option>Oak</option>
+                <option>Laminate</option>
+                <option>Rosewood</option>
+                <option>Pine</option>
+                <option>Veneer</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="NumDrawers" class="col-sm-2 col-form-label">Number of Drawers</label>
+        <div class="col-sm-10">
+            <input type="number" id="NumDrawers" name="NumDrawers" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="RushOrderDays" class="col-form-label col-sm-2">Rush Order</label>
+        <div class="col-sm-10">
+            <select id="RushOrderDays" name="RushOrderDays" class="form-control">
+                <option value="0">No Rush</option>
+                <option value="3">3 Days</option>
+                <option value="5">5 Days</option>
+                <option value="7">7 Days</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Submit Quote</button>
+    <a asp-page="/Index" class="btn btn-secondary">Back</a>
+</form>

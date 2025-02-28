@@ -1,0 +1,49 @@
+﻿@page
+@model MegaDesk_Razor_Pages.Pages.EditQuoteModel
+
+<h1>Edit Quote</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="CustomerName">Customer Name</label>
+        <input type="text" id="CustomerName" name="CustomerName" value="@Model.Quote.CustomerName" required class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="DeskWidth">Desk Width</label>
+        <input type="number" id="DeskWidth" name="DeskWidth" value="@Model.Quote.DeskWidth" required class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="DeskDepth">Desk Depth</label>
+        <input type="number" id="DeskDepth" name="DeskDepth" value="@Model.Quote.DeskDepth" required class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="DeskMaterial">Desk Material</label>
+        <select id="DeskMaterial" name="DeskMaterial" class="form-control">
+            <option>@Model.Quote.DeskMaterial</option>
+            <option>Oak</option>
+            <option>Laminate</option>
+            <option>Rosewood</option>
+            <option>Pine</option>
+            <option>Veneer</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="NumDrawers">Number of Drawers</label>
+        <input type="number" id="NumDrawers" name="NumDrawers" value="@Model.Quote.NumDrawers" required class="form-control" />
+    </div>
+    <div class="form-group row">
+        <label for="RushOrderDays">Rush Order</label>
+        <div class="col-sm-12">
+            <select id="RushOrderDays" name="RushOrderDays" class="form-control">
+                <option value="0">No Rush</option>
+                <option value="3">3 Days</option>
+                <option value="5">5 Days</option>
+                <option value="7">7 Days</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-secondary">Save Changes</button>
+    <p> </p>
+</form>
+
+<a asp-page="/Index" class="btn btn-secondary">Back</a>

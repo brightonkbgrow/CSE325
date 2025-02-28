@@ -2,11 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\MegaDesk\\WindowsFormsApp1",
-    "\\RazorPagesMovie",
+    "\\MyScriptureJournal",
+    "\\MyScriptureJournal\\MyScriptureJournal",
+    "\\MyScriptureJournal\\MyScriptureJournal\\Data",
     "\\RazorPagesMovie\\RazorPagesMovie",
     "\\RazorPagesMovie\\RazorPagesMovie\\Pages",
     "\\RazorPagesMovie\\RazorPagesMovie\\Pages\\Shared"
   ],
-  "SelectedNode": "\\RazorPagesMovie\\RazorPagesMovie\\Pages\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\MyScriptureJournal\\MyScriptureJournal\\Data\\MyScriptureJournalContext.cs",
   "PreviewInSolutionExplorer": false
 }

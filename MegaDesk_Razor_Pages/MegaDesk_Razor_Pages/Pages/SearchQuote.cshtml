@@ -1,0 +1,47 @@
+﻿@page
+@model MegaDesk_Razor_Pages.Pages.SearchQuoteModel
+@{
+    ViewData["Title"] = "Search Quotes";
+}
+
+<h2>Search Quotes</h2>
+
+
+<form method="get">
+    <label for="search">Search by Customer Name:</label>
+    <input type="text" id="search" name="SearchTerm" value="@Model.SearchTerm" />
+    <button type="submit" class="btn btn-secondary">Search</button>
+    <a asp-page="/Index" class="btn btn-secondary">Back</a>
+
+</form>
+
+@if (Model.Quotes != null && Model.Quotes.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Width</th>
+                <th>Depth</th>
+                <th>Material</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var quote in Model.Quotes)
+            {
+                <tr>
+                    <td>@quote.CustomerName</td>
+                    <td>@quote.DeskWidth</td>
+                    <td>@quote.DeskDepth</td>
+                    <td>@quote.DeskMaterial</td>
+                    <td>@quote.QuoteTotal</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (!string.IsNullOrEmpty(Model.SearchTerm))
+{
+    <p>No quotes found for "@Model.SearchTerm".</p>
+}
