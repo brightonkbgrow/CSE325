@@ -4,6 +4,13 @@
 <h2>View Quotes</h2>
 <a asp-page="/Index" class="btn btn-secondary">Back</a>
 
+
+<section>
+    <a href="?SortOrder=CustomerName&CustomerNameSearch=@Model.CustomerNameSearch&DeskMaterialSearch=@Model.DeskMaterialSearch" class="btn btn-primary">Sort by Customer Name</a> |
+    <a href="?SortOrder=Date&CustomerNameSearch=@Model.CustomerNameSearch&DeskMaterialSearch=@Model.DeskMaterialSearch" class="btn btn-primary">Sort by Quote Date</a>
+</section>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -31,8 +38,8 @@
                 <td>@quote.QuoteDate.ToString("MM/dd/yyyy")</td> 
                 <td>@quote.QuoteTotal.ToString("C")</td>
                 <td>
-                    <a asp-page="./EditQuote" asp-route-id="@quote.Id">Edit</a> |
-                    <a asp-page="./DeleteQuote" asp-route-id="@quote.Id">Delete</a>
+                    <a asp-page="./EditQuote" asp-route-id="@quote.Id" class="btn btn-secondary">Edit</a> |
+                    <a asp-page="./DeleteQuote" asp-route-id="@quote.Id" class="btn btn-secondary">Delete</a>
                 </td>
             </tr>
         }

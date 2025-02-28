@@ -29,6 +29,7 @@
         <label for="DeskMaterial" class="col-sm-2 col-form-label">Desk Material</label>
         <div class="col-sm-10">
             <select id="DeskMaterial" name="DeskMaterial" class="form-control">
+                <option value="">Select an option</option>
                 <option>Oak</option>
                 <option>Laminate</option>
                 <option>Rosewood</option>
@@ -49,6 +50,7 @@
         <label for="RushOrderDays" class="col-form-label col-sm-2">Rush Order</label>
         <div class="col-sm-10">
             <select id="RushOrderDays" name="RushOrderDays" class="form-control">
+                <option value="">Select an option</option>
                 <option value="0">No Rush</option>
                 <option value="3">3 Days</option>
                 <option value="5">5 Days</option>
@@ -57,6 +59,6 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-secondary">Submit Quote</button>
+    <button type="submit" class="btn btn-primary">Submit Quote</button>
     <a asp-page="/Index" class="btn btn-secondary">Back</a>
 </form>

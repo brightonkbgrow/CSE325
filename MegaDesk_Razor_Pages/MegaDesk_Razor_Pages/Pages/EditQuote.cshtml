@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
         <label for="DeskMaterial">Desk Material</label>
-        <select id="DeskMaterial" name="DeskMaterial" class="form-control">
+        <select id="DeskMaterial" asp-for="Quote.DeskMaterial" class="form-control">
             <option>@Model.Quote.DeskMaterial</option>
             <option>Oak</option>
             <option>Laminate</option>
@@ -27,6 +27,8 @@
             <option>Veneer</option>
         </select>
     </div>
+
+
     <div class="form-group">
         <label for="NumDrawers">Number of Drawers</label>
         <input type="number" id="NumDrawers" name="NumDrawers" value="@Model.Quote.NumDrawers" required class="form-control" />

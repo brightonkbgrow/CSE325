@@ -10,6 +10,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var app = builder.Build();
 
+// Ensure the database is created and seed data is populated
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    context.Database.Migrate(); // Apply any pending migrations
+    // Optionally, use context.Database.EnsureCreated() if you don't want migrations
+    // context.Database.EnsureCreated(); // Use this if you prefer EnsureCreated to apply the schema directly
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
