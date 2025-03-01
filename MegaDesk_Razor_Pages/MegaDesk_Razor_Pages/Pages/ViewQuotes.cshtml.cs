@@ -19,7 +19,6 @@ namespace MegaDesk_Razor_Pages.Pages
         public List<Quote> Quotes { get; set; }
         public string SortOrder { get; set; }
 
-        // Search filter properties
         public string CustomerNameSearch { get; set; }
         public string DeskMaterialSearch { get; set; }
 
@@ -27,10 +26,8 @@ namespace MegaDesk_Razor_Pages.Pages
         {
             SortOrder = sortOrder;
 
-            // Fetch all quotes from the database
             var quotes = _context.Quotes.AsQueryable();
 
-            // Apply search filters
             if (!string.IsNullOrEmpty(customerNameSearch))
             {
                 quotes = quotes.Where(q => q.CustomerName.Contains(customerNameSearch));
@@ -41,7 +38,6 @@ namespace MegaDesk_Razor_Pages.Pages
                 quotes = quotes.Where(q => q.DeskMaterial.Contains(deskMaterialSearch));
             }
 
-            // Sort quotes based on the SortOrder
             switch (SortOrder)
             {
                 case "CustomerName":

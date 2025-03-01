@@ -25,7 +25,6 @@ namespace MegaDesk_Razor_Pages.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Seed Quote Table with sample data
             modelBuilder.Entity<Quote>().HasData(
                 new Quote
                 {
@@ -37,7 +36,7 @@ namespace MegaDesk_Razor_Pages.Data
                     NumDrawers = 2,
                     RushOrderDays = 3,
                     QuoteDate = DateTime.Now,
-                    QuoteTotal = 1200
+                    QuoteTotal = 525
                 },
                 new Quote
                 {
@@ -49,7 +48,7 @@ namespace MegaDesk_Razor_Pages.Data
                     NumDrawers = 4,
                     RushOrderDays = 5,
                     QuoteDate = DateTime.Now,
-                    QuoteTotal = 1500
+                    QuoteTotal = 400
                 },
                 new Quote
                 {
@@ -61,7 +60,7 @@ namespace MegaDesk_Razor_Pages.Data
                     NumDrawers = 3,
                     RushOrderDays = 7,
                     QuoteDate = DateTime.Now.AddDays(-1),
-                    QuoteTotal = 1100
+                    QuoteTotal = 7500
                 },
                 new Quote
                 {
@@ -73,7 +72,7 @@ namespace MegaDesk_Razor_Pages.Data
                     NumDrawers = 2,
                     RushOrderDays = 0,
                     QuoteDate = DateTime.Now.AddDays(-2),
-                    QuoteTotal = 1000
+                    QuoteTotal = 600
                 }
             );
         }
