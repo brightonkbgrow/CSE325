@@ -1,0 +1,133 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: #4CAF50;
+}
+
+a {
+    color: #4CAF50;
+}
+
+    a:hover {
+        color: #388E3C;
+    }
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #4CAF50;
+    border-color: #388E3C;
+}
+
+    .btn-primary:hover {
+        background-color: #388E3C;
+        border-color: #2c6c32;
+    }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #4CAF50; 
+    border-color: #388E3C;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #388E3C;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.image-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: -120px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Big Shoulders', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    text-align: left;
+    position: relative;
+    color: #ffffff;
+    z-index: 2;
+    margin-left: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 2);
+}
+
+h2, h3 {
+    font-family: 'Big Shoulders', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #4CAF50;
+}
+
+body {
+    font-family: 'Big Shoulders', sans-serif;
+    font-weight: 500;
+    margin-bottom: 60px;
+    background-color: #f4f4f4;
+    color: #333333;
+}
+
+.navbar-brand {
+    background-color: #4CAF50;
+    border-color: #388E3C;
+    padding-left: 10px ;
+    padding-right: 10px;
+    border-radius: 3px;
+}
