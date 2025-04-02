@@ -1,0 +1,73 @@
+﻿@model SacramentMeeting
+
+<h1>Edit Sacrament Meeting Plan</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="MeetingDate"></label>
+        <input asp-for="MeetingDate" class="form-control" />
+        <span asp-validation-for="MeetingDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConductingLeader"></label>
+        <input asp-for="ConductingLeader" class="form-control" />
+        <span asp-validation-for="ConductingLeader" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OpeningSong"></label>
+        <input asp-for="OpeningSong" class="form-control" />
+        <span asp-validation-for="OpeningSong" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SacramentHymn"></label>
+        <input asp-for="SacramentHymn" class="form-control" />
+        <span asp-validation-for="SacramentHymn" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ClosingSong"></label>
+        <input asp-for="ClosingSong" class="form-control" />
+        <span asp-validation-for="ClosingSong" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OpeningPrayer"></label>
+        <input asp-for="OpeningPrayer" class="form-control" />
+        <span asp-validation-for="OpeningPrayer" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ClosingPrayer"></label>
+        <input asp-for="ClosingPrayer" class="form-control" />
+        <span asp-validation-for="ClosingPrayer" class="text-danger"></span>
+    </div>
+    <div id="speakers-container">
+        <div class="form-group">
+            <label for="SpeakerNames">Speakers</label>
+            <input type="text" name="Speakers[0].Name" class="form-control" placeholder="Speaker Name" />
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" onclick="addSpeaker()">Add another speaker</button>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div>
+    <a asp-action="Index">Back to Plans</a>
+</div>
+
+@section Scripts {
+    <script>
+        let speakerIndex = 1;
+
+        function addSpeaker() {
+            const container = document.getElementById("speakers-container");
+            const newSpeakerField = document.createElement("div");
+            newSpeakerField.classList.add("form-group");
+            newSpeakerField.innerHTML = `
+                <label for="SpeakerNames">Speaker ${speakerIndex + 1}</label>
+                <input type="text" name="Speakers[${speakerIndex}].Name" class="form-control" placeholder="Speaker Name" />
+            `;
+            container.appendChild(newSpeakerField);
+            speakerIndex++;
+        }
+    </script>
+}

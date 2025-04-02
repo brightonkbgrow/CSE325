@@ -1,0 +1,75 @@
+﻿@model SacramentMeeting
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacrament Meeting Program</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/program.css" asp-append-version="true" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Sacrament Meeting Program</h1>
+
+        <div class="program-section">
+            <h3>Meeting Date</h3>
+            <p>@Model.MeetingDate.ToString("MMMM dd, yyyy")</p>
+        </div>
+
+        <div class="program-section">
+            <h3>Conducting Leader</h3>
+            <p>@Model.ConductingLeader</p>
+        </div>
+
+        <div class="program-section">
+            <h3>Opening Hymn</h3>
+            <p>@Model.OpeningSong</p>
+        </div>
+
+        <div class="program-section">
+            <h3>Opening Prayer</h3>
+            <p>@Model.OpeningPrayer</p>
+        </div>
+
+        <div class="program-section">
+            <h3>Sacrament Hymn</h3>
+            <p>@Model.SacramentHymn</p>
+        </div>
+
+        @if (Model.Speakers != null && Model.Speakers.Any())
+        {
+            <div class="program-section">
+                <h3>Speakers</h3>
+                <ul>
+                    @foreach (var speaker in Model.Speakers)
+                    {
+                        <li>@speaker.Name</li>
+                    }
+                </ul>
+            </div>
+        }
+
+        <div class="program-section">
+            <h3>Closing Song</h3>
+            <p>@Model.ClosingSong</p>
+        </div>
+
+        <div class="program-section">
+            <h3>Closing Prayer</h3>
+            <p>@Model.ClosingPrayer</p>
+        </div>
+
+
+        <!-- Hidden Back link for navigation -->
+        <div class="back-link">
+            <a href="@Url.Action("Index", "SacramentMeetings")" class="btn btn-secondary">Back to List</a>
+        </div>
+
+        <!-- Print Button -->
+        <button onclick="window.print()" class="btn btn-primary">Print Program</button>
+    </div>
+</body>
+</html>
